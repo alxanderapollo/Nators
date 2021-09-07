@@ -1,0 +1,61 @@
+/*
+COLORS:
+
+Light green: #7ed56f
+Medium green: #55c57a
+Dark green: #28b485
+*/
+
+/*
+Universla selector will select each and every element on the page and then  apply all these decelerations to them
+*/
+*{
+    margin:0;
+    padding:0;
+    /* box siszing property - changes box model so that the borders and the padding are no longer added
+        to the total width or heigh that we specify to the box
+    */
+    box-sizing: border-box;
+}
+
+/* everything related to font is done in the parent element - body - to affect all other fonts, not good practice
+to put it in the universal selector
+ */
+body{
+      /* overall font properties - properties related to font are usually inherited 
+    so we are doing it in here  */
+    font-family: "Lato", sans-serif; 
+    font-weight: 400;
+    font-size:16px;
+    /* line height - means it 1.7 times bigger than the pre defined line height */
+    line-height:1.7;
+    color: #777;
+    /* sets a 30 pxl padding around the image through out the entire page, padding isnt inherited */
+    padding:30px; 
+}
+.header{
+    /* vh: means view port hight - what this is saying that every point that the high of the box of this element 
+    should be 95% of this height */
+    height:95vh;
+    /* images are being stacked ontop of one another, first the linear gradient, and then url image */
+    /* the to right means start the gradient from start pt to end point 
+    in our example we start from top left to bottom right */
+    /* choose a color with an opacity of 0.8 stands for 80 percent*/
+    /* what this does allows us to sit colors ontop of an image, and we set the opacity of the website so that its
+    more transparent */
+    background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.816), rgba(40, 180, 133, 0.802)),
+     url(../img/hero.jpg);
+    /* what cover does is, whatever the width of the element, always try to fit the element inside of the box */
+    background-size: cover;
+    /* ensures that whatever resizing of the image happens, makes sure the image stays at the top of the view port */
+    background-position: top;
+    /* !!!!look this up
+    clip path Specifies a clipping path where everything inside the path is visible and everything outside is clipped out. */
+    /* 4 points on the image, starting from the top left of the image
+        1st pt 0, 0 keep the point in the same place, in the x  and y direction we want no change
+        2nd pt from left to right we dont wan anything to change
+
+        this website makes custom clipies ----> https://bennettfeely.com/clippy/
+    */
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+}
